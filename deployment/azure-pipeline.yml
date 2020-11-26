@@ -39,6 +39,15 @@ steps:
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
     
+-  stage: Deploy
+  jobs:
+  - job: Deploy
+    pool:
+        vmImage: 'vs2017-win2016'
+
+    steps:
+
+
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
