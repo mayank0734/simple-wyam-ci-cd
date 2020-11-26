@@ -42,7 +42,7 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'Free Trial (8bc354b4-f372-41ce-a6c2-856ab22f5fcf)'
+    azureResourceManagerConnection: 'Free Trial(1)(8bc354b4-f372-41ce-a6c2-856ab22f5fcf)'
     subscriptionId: '8bc354b4-f372-41ce-a6c2-856ab22f5fcf'
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'mjtest'
