@@ -54,7 +54,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Azure CLI '
   inputs:
-    azureSubscription: 'Free Trial (8bc354b4-f372-41ce-a6c2-856ab22f5fcf)'
+    azureSubscription: 'Free Trial(1)(8bc354b4-f372-41ce-a6c2-856ab22f5fcf)'
     scriptType: ps
     scriptLocation: inlineScript
     inlineScript: 'az storage blob service-properties update --account-name wyamfrankdemo1 --static-website --index-document index.html'
@@ -63,7 +63,7 @@ steps:
   displayName: 'AzureBlob File Copy'
   inputs:
     SourcePath: '$(System.DefaultWorkingDirectory)/drop/drop/outpout'
-    azureSubscription: 'Free Trial (8bc354b4-f372-41ce-a6c2-856ab22f5fcf)'
+    azureSubscription: 'Free Trial(1)(8bc354b4-f372-41ce-a6c2-856ab22f5fcf)'
     Destination: AzureBlob
     storage: wyamfrankdemo1
     ContainerName: '$web'
