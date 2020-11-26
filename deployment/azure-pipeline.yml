@@ -39,7 +39,6 @@ steps:
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
     
-steps:
 - task: AzureResourceManagerTemplateDeployment@3
   displayName: 'ARM Template deployment: Resource Group scope'
   inputs:
@@ -49,7 +48,6 @@ steps:
     location: 'East US'
     csmFile: '$(System.DefaultWorkingDirectory)/drop/drop/deployment/deploy.json'
     
-steps:
 - task: AzureCLI@2
   displayName: 'Azure CLI '
   inputs:
@@ -58,7 +56,6 @@ steps:
     scriptLocation: inlineScript
     inlineScript: 'az storage blob service-properties update --account-name wyamfrankdemo1 --static-website --index-document index.html'
     
-steps:
 - task: AzureFileCopy@2
   displayName: 'AzureBlob File Copy'
   inputs:
