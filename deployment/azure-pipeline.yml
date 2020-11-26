@@ -40,13 +40,16 @@ steps:
     PathtoPublish: '$(build.artifactstagingdirectory)'
     
 - task: AzureResourceManagerTemplateDeployment@3
-  displayName: 'ARM Template deployment: Resource Group scope'
   inputs:
+    deploymentScope: 'Resource Group'
     azureResourceManagerConnection: 'Free Trial (8bc354b4-f372-41ce-a6c2-856ab22f5fcf)'
     subscriptionId: '8bc354b4-f372-41ce-a6c2-856ab22f5fcf'
-    resourceGroupName: mjtest
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'mjtest'
     location: 'East US'
+    templateLocation: 'Linked artifact'
     csmFile: '$(System.DefaultWorkingDirectory)/drop/drop/deployment/deploy.json'
+    deploymentMode: 'Incremental'
     
 - task: AzureCLI@2
   displayName: 'Azure CLI '
